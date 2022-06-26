@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>flines-hedgehog</title>
+		
 		<link rel="apple-touch-icon" sizes="180x180" href="./media/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./media/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./media/favicon-16x16.png">
@@ -9,10 +10,28 @@
 		<link rel="mask-icon" href="./media/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
-		
+	  
 		<style>
+			.preloadedImages {
+				width: 0px;
+				height: 0px;
+				display: inline;
+				background-image: url(./media/flinprojects/background_albums.png), url(./media/flinprojects/background_games.png), url(./media/flinprojects/background_top_albums.png), url(./media/flinprojects/background_top_games.png), url(./media/lab/background.png), url(./media/lab/background_top.png), url(./media/toyventure/background.png), url(./media/toyventure/background_top.png);
+			}
+		
+			html {
+				height: 100%;
+			}
+		
 			body {
-				background-color: #080808; //3275E4 1956BC
+				background-color: #080808;
+				background-image: url('');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: fixed;
+				background-size: auto 100%;
+				
+				overflow: auto;
 			}
 		  
 			.topnav {
@@ -20,11 +39,16 @@
 				max-width: 100%;
 				margin: 0;
 				
-				border: 2px solid #000000;
+				border: 4px solid;
 				border-radius: 20px;
+				
+				background-repeat: no-repeat;
+				background-size: auto 100%;
+				background-position: center;
+				background-attachment: fixed;
 			}
 			
-			.logo {
+			.logo {				
 				max-width: 500px;
 				max-height: 300px;
 				height: 115px;
@@ -33,15 +57,170 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
+			
+			.menus_background {
+				width: fit-content;
+				background-color: rgba(255, 255, 255, 0.2);
+		
+				border: 4px solid rgba(255, 255, 255, 0.6);
+				border-radius: 20px;
+				
+				overflow: hidden;
+			}
+			
+			.logo_games {
+				margin-top: 5px;
+				margin: 25px;
+			
+				max-width: 500px;
+				max-height: 300px;
+				height: 100px;
+				
+				position: relative;
+				top: 0;
+				transition: top ease 0.5s;
+			}
+			
+			.logo_games:hover {
+				top: -10px;
+			}
+			
+			.logo_flins {
+				margin-left: 25px;
+				margin-right: 25px;
+				margin-bottom: 25px;
+				margin-top: 25px;
+				
+				max-width: 500px;
+				max-height: 300px;
+				height: 100px;
+				
+				position: relative;
+				top: 0;
+				transition: top ease 0.5s;
+			}
+			
+			.logo_flins:hover {
+				top: -10px;
+			}
 		</style>
 	  
-		<div class="topnav">
-			<img class="logo" src=".\media\logos\logo_classic.png" alt="flines"\>
+		<div id="top_nav" class="topnav">
+			<img id="logo_flines" class="logo" src=".\media\logos\logo_classic.png" alt="flines"\>
 		</div>
 	</head>
 	
-	<body>
-		<center><img src=".\media\flin\flin_one.png" alt="flin"\>
-		<h2 style="font-family: Arial, Helvetica, sans-serif; color: #eeeeee;">He is coming.</h2></center>
+	<body id="body">
+		<div hidden class="preloadedImages"></div><br>
+		<center><div id="menus_games" class="menus_background"><div id="menu_games">
+			<img id="logo_lab" class="logo_games" src=".\media\lab\lab_logo.png" alt="Lab Cat Mania"\>
+			<img id="logo_wsps" class="logo_games" src=".\media\wsps\wspsh_logo.png" alt="Watching Someone Pee Simulator: HYPER!!"\>
+			<img id="logo_tvo" class="logo_games" src=".\media\toyventure\tvo_logo.png" alt="Toyventure"\>
+			<img id="logo_bp" class="logo_games" src=".\media\birdpals\bp_logo.png" alt="Birdpals"\>
+		</div></div>
+		<div id="menus_flin" style="margin-top: 2em" class="menus_background"><div id="menu_flins">
+			<img id="home_button" class="logo_flins" src=".\media\flinprojects\flin_home.png" alt="FLIN GAMES"\>		
+			<img id="flinposting" class="logo_flins" src=".\media\flinprojects\flin_posting.png" alt="FLIN GAMES"\>		
+			<img id="flin_albums" class="logo_flins" src=".\media\flinprojects\flin_albums.png" alt="FLIN ALBUMS"\>		
+			<img id="flin_games" class="logo_flins" src=".\media\flinprojects\flin_games.png" alt="FLIN GAMES"\>		
+		</div></center>
+	
+	<script type="text/javascript">
+		var logo_flines = document.getElementById('logo_flines');
+		var body = document.getElementById('body');
+		var top_nav = document.getElementById('top_nav');
+		
+		var menus = document.getElementById('menus_games');
+		var menus2 = document.getElementById('menus_flin');
+		
+		var logo_games = document.getElementsByClassName('logo_games');
+		
+		
+	
+		//logo_flines_projects HOVER
+			var games_menu = document.getElementById('menu_games');
+
+				var logo_lab = document.getElementById('logo_lab');
+				
+					logo_lab.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_lab.png"
+						body.style.backgroundImage="url(./media/lab/background.png)";
+						top_nav.style.backgroundImage="url(./media/lab/background_top.png)";
+					})
+				
+				var logo_wsps = document.getElementById('logo_wsps');
+			
+					logo_wsps.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_faraway.png"
+						body.style.backgroundColor = '#1956BC';
+						top_nav.style.backgroundColor = '#003A9D';
+					})
+					
+				var logo_tvo = document.getElementById('logo_tvo');
+			
+					logo_tvo.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_rat.png"
+						body.style.backgroundImage="url(./media/toyventure/background.png)";
+						top_nav.style.backgroundImage="url(./media/toyventure/background_top.png)";						
+					})
+
+				var logo_bp = document.getElementById('logo_bp');
+			
+					logo_bp.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_bp.png"
+					})				
+				
+		//logo_flin_projects HOVER
+			var flins_menu = document.getElementById('menu_flins');
+
+				var home_page = document.getElementById('home_button');
+				
+					home_page.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_classic.png"
+						body.style.backgroundColor = '#080808';
+						top_nav.style.backgroundColor = '#000000';
+						body.style.backgroundImage="url()";
+						top_nav.style.backgroundImage="url()";
+					})
+				
+				var flin_post = document.getElementById('flinposting');
+			
+					flin_post.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_flin.png"				
+					})
+					
+				var flin_music = document.getElementById('flin_albums');
+			
+					flin_music.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_flin.png"								
+						body.style.backgroundImage="url(./media/flinprojects/background_albums.png)";
+						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_albums.png)";						
+					})
+
+				var flin_gaming = document.getElementById('flin_games');
+			
+					flin_gaming.addEventListener('mouseover', function(e) {
+						logo_flines.src = "./media/logos/logo_flin.png"				
+						body.style.backgroundImage="url(./media/flinprojects/background_games.png)";
+						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_games.png)";						
+					})				
+
+				menus.addEventListener('mouseout', function(e) {
+					logo_flines.src = "./media/logos/logo_classic.png"
+					body.style.backgroundColor = '#080808';
+					top_nav.style.backgroundColor = '#000000';
+					body.style.backgroundImage="url()";
+					top_nav.style.backgroundImage="url()";
+				})
+				
+				menus2.addEventListener('mouseout', function(e) {
+					logo_flines.src = "./media/logos/logo_classic.png"
+					body.style.backgroundColor = '#080808';
+					top_nav.style.backgroundColor = '#000000';
+					body.style.backgroundImage="url()";
+					top_nav.style.backgroundImage="url()";
+				})
+	</script>
+	
 	</body>
 </html>
