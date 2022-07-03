@@ -16,7 +16,7 @@
 				width: 0px;
 				height: 0px;
 				display: inline;
-				background-image: url(./media/flinprojects/background_albums.png), url(./media/flinprojects/background_games.png), url(./media/flinprojects/background_top_albums.png), url(./media/flinprojects/background_top_games.png), url(./media/lab/background.png), url(./media/lab/background_top.png), url(./media/toyventure/background.png), url(./media/toyventure/background_top.png);
+				background-image: url(./media/flinprojects/background_posting.png), url(./media/flinprojects/background_top_posting.png), url(./media/flinprojects/background_albums.png), url(./media/flinprojects/background_games.png), url(./media/flinprojects/background_top_albums.png), url(./media/flinprojects/background_top_games.png), url(./media/lab/background.png), url(./media/lab/background_top.png), url(./media/toyventure/background.png), url(./media/toyventure/background_top.png), url(./media/birdpals/background.png), url(./media/birdpals/background_top.png);
 			}
 		
 			html {
@@ -29,7 +29,7 @@
 				background-repeat: no-repeat;
 				background-position: center;
 				background-attachment: fixed;
-				background-size: auto 100%;
+				background-size: cover;
 				
 				overflow: auto;
 			}
@@ -43,7 +43,7 @@
 				border-radius: 20px;
 				
 				background-repeat: no-repeat;
-				background-size: auto 100%;
+				background-size: cover;
 				background-position: center;
 				background-attachment: fixed;
 			}
@@ -59,13 +59,15 @@
 			}
 			
 			.menus_background {
+				display: inline-block;
+			
 				width: fit-content;
 				background-color: rgba(255, 255, 255, 0.2);
 		
 				border: 4px solid rgba(255, 255, 255, 0.6);
 				border-radius: 20px;
 				
-				overflow: hidden;
+				margin: 20px;
 			}
 			
 			.logo_games {
@@ -74,7 +76,7 @@
 			
 				max-width: 500px;
 				max-height: 300px;
-				height: 100px;
+				height: 60px;
 				
 				position: relative;
 				top: 0;
@@ -93,7 +95,7 @@
 				
 				max-width: 500px;
 				max-height: 300px;
-				height: 100px;
+				height: 60px;
 				
 				position: relative;
 				top: 0;
@@ -103,6 +105,46 @@
 			.logo_flins:hover {
 				top: -10px;
 			}
+			
+			.example_projects {
+				height: fit-content;
+				width: fit-contet;
+				background-color: rgba(255, 255, 255, 0.2);
+		
+				border: 4px solid rgba(255, 255, 255, 0.6);
+				border-radius: 20px;
+				
+				display: inline-block;
+				overflow: hidden;
+			}
+			
+			.example_images {
+				margin: 10px;
+				margin-right: 10px;
+				
+				max-width: 800px;
+				max-height: 800px;
+				width: 220px;
+			}
+			
+			.example_logo {
+				margin: 5px;
+				margin-bottom: 0px;
+				max-width: 500px;
+				max-height: 300px;
+				
+				width: 320px;
+			}
+			
+			.example_text {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 1.5em;
+				
+				margin: 10px;
+				margin-top: 2px;
+				color: black;
+				text-decoration: none;
+			}
 		</style>
 	  
 		<div id="top_nav" class="topnav">
@@ -111,31 +153,38 @@
 	</head>
 	
 	<body id="body">
-		<div hidden class="preloadedImages"></div><br>
-		<center><div id="menus_games" class="menus_background"><div id="menu_games">
+		<center><div hidden class="preloadedImages"></div><br>
+		<div onmouseleave="nohover()" id="menus_games" class="menus_background">
 			<img id="logo_lab" class="logo_games" src=".\media\lab\lab_logo.png" alt="Lab Cat Mania"\>
 			<img id="logo_wsps" class="logo_games" src=".\media\wsps\wspsh_logo.png" alt="Watching Someone Pee Simulator: HYPER!!"\>
 			<img id="logo_tvo" class="logo_games" src=".\media\toyventure\tvo_logo.png" alt="Toyventure"\>
 			<img id="logo_bp" class="logo_games" src=".\media\birdpals\bp_logo.png" alt="Birdpals"\>
-		</div></div>
-		<div id="menus_flin" style="margin-top: 2em" class="menus_background"><div id="menu_flins">
+		</div><div onmouseleave="nohover()" id="menus_flin" class="menus_background">
 			<img id="home_button" class="logo_flins" src=".\media\flinprojects\flin_home.png" alt="FLIN GAMES"\>		
 			<img id="flinposting" class="logo_flins" src=".\media\flinprojects\flin_posting.png" alt="FLIN GAMES"\>		
 			<img id="flin_albums" class="logo_flins" src=".\media\flinprojects\flin_albums.png" alt="FLIN ALBUMS"\>		
 			<img id="flin_games" class="logo_flins" src=".\media\flinprojects\flin_games.png" alt="FLIN GAMES"\>		
 		</div></center>
+		<br>
+		<div class="example_projects">
+			<center><img id="example_logo_1" class="example_logo" src=".\media\toyventure\tvo_logo.png"/>
+			<br><div style="clear:both;"></div>
+			<a id="example_text_1" class="example_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at faucibus turpis. Suspendisse potenti. Nulla varius commodo neque a porttitor. Maecenas eget diam euismod, eleifend leo ut, bibendum lectus. Mauris eget sodales eros. Curabitur et mollis urna. Donec id lobortis magna. Vestibulum eu consequat nisl. Pellentesque vitae fermentum orci, et auctor ex. Sed sed metus sit amet sapien placerat ullamcorper tempor quis ex. Fusce mattis in sapien non malesuada. Nullam non venenatis ipsum, et iaculis elit. Suspendisse potenti. Proin quis enim ac diam imperdiet malesuada id in ligula. Vestibulum non semper ipsum. Phasellus lacinia elit massa, cursus efficitur tellus commodo ac. Morbi et ante nisi. Praesent at suscipit nisi, quis dictum magna. Sed imperdiet ante dolor, mattis volutpat orci vehicula ac. Mauris hendrerit facilisis elit, sed commodo nisi commodo id. Duis pharetra leo eget fringilla volutpat. Nulla quis magna lacinia, ultricies ante ut, gravida ante.</a>
+			<br><div style="clear:both;"></div>
+			<img id="example_image_1" class="example_images" src=".\media\toyventure\tvo_title.png"/>
+			<img id="example_image_2" class="example_images" src=".\media\toyventure\tvo_pub.png"/>
+			<img id="example_image_3" class="example_images" src=".\media\toyventure\tvo_customize.png"/>
+			<img id="example_image_4" class="example_images" src=".\media\toyventure\tvo_bricksburg.png"/>
+		</center></div>
 	
 	<script type="text/javascript">
 		var logo_flines = document.getElementById('logo_flines');
 		var body = document.getElementById('body');
 		var top_nav = document.getElementById('top_nav');
 		
-		var menus = document.getElementById('menus_games');
-		var menus2 = document.getElementById('menus_flin');
+		var menus = document.getElementsByClassName('menus_background');
 		
 		var logo_games = document.getElementsByClassName('logo_games');
-		
-		
 	
 		//logo_flines_projects HOVER
 			var games_menu = document.getElementById('menu_games');
@@ -154,6 +203,8 @@
 						logo_flines.src = "./media/logos/logo_faraway.png"
 						body.style.backgroundColor = '#1956BC';
 						top_nav.style.backgroundColor = '#003A9D';
+						body.style.backgroundImage="url()";
+						top_nav.style.backgroundImage="url()";
 					})
 					
 				var logo_tvo = document.getElementById('logo_tvo');
@@ -168,6 +219,8 @@
 			
 					logo_bp.addEventListener('mouseover', function(e) {
 						logo_flines.src = "./media/logos/logo_bp.png"
+						body.style.backgroundImage="url(./media/birdpals/background.png)";
+						top_nav.style.backgroundImage="url(./media/birdpals/background_top.png)";						
 					})				
 				
 		//logo_flin_projects HOVER
@@ -187,6 +240,8 @@
 			
 					flin_post.addEventListener('mouseover', function(e) {
 						logo_flines.src = "./media/logos/logo_flin.png"				
+						body.style.backgroundImage="url(./media/flinprojects/background_posting.png)";
+						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_posting.png)";						
 					})
 					
 				var flin_music = document.getElementById('flin_albums');
@@ -205,21 +260,15 @@
 						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_games.png)";						
 					})				
 
-				menus.addEventListener('mouseout', function(e) {
+				function nohover() {
 					logo_flines.src = "./media/logos/logo_classic.png"
 					body.style.backgroundColor = '#080808';
 					top_nav.style.backgroundColor = '#000000';
 					body.style.backgroundImage="url()";
 					top_nav.style.backgroundImage="url()";
-				})
+				}
 				
-				menus2.addEventListener('mouseout', function(e) {
-					logo_flines.src = "./media/logos/logo_classic.png"
-					body.style.backgroundColor = '#080808';
-					top_nav.style.backgroundColor = '#000000';
-					body.style.backgroundImage="url()";
-					top_nav.style.backgroundImage="url()";
-				})
+		//PROJECTS CLICK
 	</script>
 	
 	</body>
