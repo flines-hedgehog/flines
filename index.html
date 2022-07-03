@@ -32,6 +32,8 @@
 				background-size: cover;
 				
 				overflow: auto;
+				
+				transition: all .2s ease-in-out;
 			}
 		  
 			.topnav {
@@ -46,6 +48,8 @@
 				background-size: cover;
 				background-position: center;
 				background-attachment: fixed;
+				
+				transition: all .2s ease-in-out;
 			}
 			
 			.logo {				
@@ -107,8 +111,9 @@
 			}
 			
 			.example_projects {
+				max-width: 100%;
 				height: fit-content;
-				width: fit-contet;
+				width: 90%;
 				background-color: rgba(255, 255, 255, 0.2);
 		
 				border: 4px solid rgba(255, 255, 255, 0.6);
@@ -124,7 +129,17 @@
 				
 				max-width: 800px;
 				max-height: 800px;
-				width: 220px;
+				width: 250px;
+				
+				position: relative;
+				top: 0;
+				transition: top ease 0.5s;
+				
+				border: 3px solid rgba(0, 0, 0);
+			}
+			
+			.example_images:hover {
+				top: -10px;
 			}
 			
 			.example_logo {
@@ -145,6 +160,31 @@
 				color: black;
 				text-decoration: none;
 			}
+			
+			.social_media {
+				height: fit-content;
+				width: fit-content;
+				background-color: rgba(255, 255, 255, 0.2);
+		
+				border: 4px solid rgba(255, 255, 255, 0.6);
+				border-radius: 20px;
+				
+				display: inline-block;
+				overflow: hidden;
+			}
+			
+			.sm_icon {
+				margin: 12px;
+			
+				max-width: 256px;
+				width: 48px;
+				
+				transition: width ease 0.5s;
+			}
+			
+			.sm_icon:hover {
+				width: 60px;
+			}
 		</style>
 	  
 		<div id="top_nav" class="topnav">
@@ -153,123 +193,37 @@
 	</head>
 	
 	<body id="body">
-		<center><div hidden class="preloadedImages"></div><br>
+		<center><div hidden class="preloadedImages"></div>
 		<div onmouseleave="nohover()" id="menus_games" class="menus_background">
-			<img id="logo_lab" class="logo_games" src=".\media\lab\lab_logo.png" alt="Lab Cat Mania"\>
-			<img id="logo_wsps" class="logo_games" src=".\media\wsps\wspsh_logo.png" alt="Watching Someone Pee Simulator: HYPER!!"\>
-			<img id="logo_tvo" class="logo_games" src=".\media\toyventure\tvo_logo.png" alt="Toyventure"\>
-			<img id="logo_bp" class="logo_games" src=".\media\birdpals\bp_logo.png" alt="Birdpals"\>
+			<img id="logo_lab" onclick="clickbutton(this)" class="logo_games" src=".\media\lab\lab_logo.png" alt="Lab Cat Mania"\>
+			<img id="logo_wsps" onclick="clickbutton(this)" class="logo_games" src=".\media\wsps\wspsh_logo.png" alt="Watching Someone Pee Simulator: HYPER!!"\>
+			<img id="logo_tvo" onclick="clickbutton(this)" class="logo_games" src=".\media\toyventure\tvo_logo.png" alt="Toyventure"\>
+			<img id="logo_bp" onclick="clickbutton(this)" class="logo_games" src=".\media\birdpals\bp_logo.png" alt="Birdpals"\>
 		</div><div onmouseleave="nohover()" id="menus_flin" class="menus_background">
-			<img id="home_button" class="logo_flins" src=".\media\flinprojects\flin_home.png" alt="FLIN GAMES"\>		
-			<img id="flinposting" class="logo_flins" src=".\media\flinprojects\flin_posting.png" alt="FLIN GAMES"\>		
-			<img id="flin_albums" class="logo_flins" src=".\media\flinprojects\flin_albums.png" alt="FLIN ALBUMS"\>		
-			<img id="flin_games" class="logo_flins" src=".\media\flinprojects\flin_games.png" alt="FLIN GAMES"\>		
+			<img id="home_button" onclick="clickbutton(this)" class="logo_flins" src=".\media\flinprojects\flin_home.png" alt="FLIN GAMES"\>		
+			<img id="flinposting" onclick="clickbutton(this)" class="logo_flins" src=".\media\flinprojects\flin_posting.png" alt="FLIN GAMES"\>		
+			<img id="flin_albums" onclick="clickbutton(this)" class="logo_flins" src=".\media\flinprojects\flin_albums.png" alt="FLIN ALBUMS"\>		
+			<img id="flin_games" onclick="clickbutton(this)" class="logo_flins" src=".\media\flinprojects\flin_games.png" alt="FLIN GAMES"\>		
+		</div></center>
+		
+		<center><div class="example_projects">
+			<img id="example_logo_1" class="example_logo" src="./media/logos/logo_classic.png"/>
+			<br><div style="clear:both;"></div>
+			<a id="example_text_1" class="example_text">Welcome to my website!!</a>
+			<br><div style="clear:both;"></div><br>
+			<img style="display: none;" id="example_image_1" class="example_images" src=""/>
+			<img style="display: none;" id="example_image_2" class="example_images" src="" onclick="clicksbutton(this)"/>
+			<img style="display: none;" id="example_image_3" class="example_images" src=""/>
+			<img style="display: none;" id="example_image_4" class="example_images" src=""/>
 		</div></center>
 		<br>
-		<div class="example_projects">
-			<center><img id="example_logo_1" class="example_logo" src=".\media\toyventure\tvo_logo.png"/>
-			<br><div style="clear:both;"></div>
-			<a id="example_text_1" class="example_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at faucibus turpis. Suspendisse potenti. Nulla varius commodo neque a porttitor. Maecenas eget diam euismod, eleifend leo ut, bibendum lectus. Mauris eget sodales eros. Curabitur et mollis urna. Donec id lobortis magna. Vestibulum eu consequat nisl. Pellentesque vitae fermentum orci, et auctor ex. Sed sed metus sit amet sapien placerat ullamcorper tempor quis ex. Fusce mattis in sapien non malesuada. Nullam non venenatis ipsum, et iaculis elit. Suspendisse potenti. Proin quis enim ac diam imperdiet malesuada id in ligula. Vestibulum non semper ipsum. Phasellus lacinia elit massa, cursus efficitur tellus commodo ac. Morbi et ante nisi. Praesent at suscipit nisi, quis dictum magna. Sed imperdiet ante dolor, mattis volutpat orci vehicula ac. Mauris hendrerit facilisis elit, sed commodo nisi commodo id. Duis pharetra leo eget fringilla volutpat. Nulla quis magna lacinia, ultricies ante ut, gravida ante.</a>
-			<br><div style="clear:both;"></div>
-			<img id="example_image_1" class="example_images" src=".\media\toyventure\tvo_title.png"/>
-			<img id="example_image_2" class="example_images" src=".\media\toyventure\tvo_pub.png"/>
-			<img id="example_image_3" class="example_images" src=".\media\toyventure\tvo_customize.png"/>
-			<img id="example_image_4" class="example_images" src=".\media\toyventure\tvo_bricksburg.png"/>
-		</center></div>
+		<center><div class="social_media">
+			<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/flines"><img id="youtube" class="sm_icon" src=".\media\icons\youtube.png"/></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/flines_hedgehog"><img id="twitter" class="sm_icon" src=".\media\icons\twitter.png"/></a>
+			<a target="_blank" rel="noopener noreferrer" href="https://gamejolt.com/@flines"><img id="gamejolt" class="sm_icon" src=".\media\icons\gamejolt.png"/></a>
+		</div></center>
 	
-	<script type="text/javascript">
-		var logo_flines = document.getElementById('logo_flines');
-		var body = document.getElementById('body');
-		var top_nav = document.getElementById('top_nav');
-		
-		var menus = document.getElementsByClassName('menus_background');
-		
-		var logo_games = document.getElementsByClassName('logo_games');
-	
-		//logo_flines_projects HOVER
-			var games_menu = document.getElementById('menu_games');
-
-				var logo_lab = document.getElementById('logo_lab');
-				
-					logo_lab.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_lab.png"
-						body.style.backgroundImage="url(./media/lab/background.png)";
-						top_nav.style.backgroundImage="url(./media/lab/background_top.png)";
-					})
-				
-				var logo_wsps = document.getElementById('logo_wsps');
-			
-					logo_wsps.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_faraway.png"
-						body.style.backgroundColor = '#1956BC';
-						top_nav.style.backgroundColor = '#003A9D';
-						body.style.backgroundImage="url()";
-						top_nav.style.backgroundImage="url()";
-					})
-					
-				var logo_tvo = document.getElementById('logo_tvo');
-			
-					logo_tvo.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_rat.png"
-						body.style.backgroundImage="url(./media/toyventure/background.png)";
-						top_nav.style.backgroundImage="url(./media/toyventure/background_top.png)";						
-					})
-
-				var logo_bp = document.getElementById('logo_bp');
-			
-					logo_bp.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_bp.png"
-						body.style.backgroundImage="url(./media/birdpals/background.png)";
-						top_nav.style.backgroundImage="url(./media/birdpals/background_top.png)";						
-					})				
-				
-		//logo_flin_projects HOVER
-			var flins_menu = document.getElementById('menu_flins');
-
-				var home_page = document.getElementById('home_button');
-				
-					home_page.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_classic.png"
-						body.style.backgroundColor = '#080808';
-						top_nav.style.backgroundColor = '#000000';
-						body.style.backgroundImage="url()";
-						top_nav.style.backgroundImage="url()";
-					})
-				
-				var flin_post = document.getElementById('flinposting');
-			
-					flin_post.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_flin.png"				
-						body.style.backgroundImage="url(./media/flinprojects/background_posting.png)";
-						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_posting.png)";						
-					})
-					
-				var flin_music = document.getElementById('flin_albums');
-			
-					flin_music.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_flin.png"								
-						body.style.backgroundImage="url(./media/flinprojects/background_albums.png)";
-						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_albums.png)";						
-					})
-
-				var flin_gaming = document.getElementById('flin_games');
-			
-					flin_gaming.addEventListener('mouseover', function(e) {
-						logo_flines.src = "./media/logos/logo_flin.png"				
-						body.style.backgroundImage="url(./media/flinprojects/background_games.png)";
-						top_nav.style.backgroundImage="url(./media/flinprojects/background_top_games.png)";						
-					})				
-
-				function nohover() {
-					logo_flines.src = "./media/logos/logo_classic.png"
-					body.style.backgroundColor = '#080808';
-					top_nav.style.backgroundColor = '#000000';
-					body.style.backgroundImage="url()";
-					top_nav.style.backgroundImage="url()";
-				}
-				
-		//PROJECTS CLICK
-	</script>
-	
+		<script type="text/javascript" src=".\scripts\hover.js"></script>
+		<script type="text/javascript" src=".\scripts\click.js"></script>
 	</body>
 </html>
