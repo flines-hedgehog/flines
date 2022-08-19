@@ -17,7 +17,7 @@
 			//example changes
 			project_example_logo.src = "./media/logos/logo_classic.png"
 			
-			project_example_text.innerText = "Welcome to my website!!"
+			project_example_text.innerText = "i kinda uh haven't finished this website so come back some other day or something"
 			
 			project_example_img1.style.display = 'none';
 			project_example_img2.style.display = 'none';

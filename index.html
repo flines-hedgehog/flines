@@ -11,181 +11,7 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
 	  
-		<style>
-			.preloadedImages {
-				width: 0px;
-				height: 0px;
-				display: inline;
-				background-image: url(./media/flinprojects/background_posting.png), url(./media/flinprojects/background_top_posting.png), url(./media/flinprojects/background_albums.png), url(./media/flinprojects/background_games.png), url(./media/flinprojects/background_top_albums.png), url(./media/flinprojects/background_top_games.png), url(./media/lab/background.png), url(./media/lab/background_top.png), url(./media/toyventure/background.png), url(./media/toyventure/background_top.png), url(./media/birdpals/background.png), url(./media/birdpals/background_top.png);
-			}
-		
-			html {
-				height: 100%;
-			}
-		
-			body {
-				background-color: #080808;
-				background-image: url('');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-attachment: fixed;
-				background-size: cover;
-				
-				overflow: auto;
-				
-				transition: all .2s ease-in-out;
-			}
-		  
-			.topnav {
-				background-color: #000000;
-				max-width: 100%;
-				margin: 0;
-				
-				border: 4px solid;
-				border-radius: 20px;
-				
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center;
-				background-attachment: fixed;
-				
-				transition: all .2s ease-in-out;
-			}
-			
-			.logo {				
-				max-width: 500px;
-				max-height: 300px;
-				height: 115px;
-				
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			
-			.menus_background {
-				display: inline-block;
-			
-				width: fit-content;
-				background-color: rgba(255, 255, 255, 0.2);
-		
-				border: 4px solid rgba(255, 255, 255, 0.6);
-				border-radius: 20px;
-				
-				margin: 20px;
-			}
-			
-			.logo_games {
-				margin-top: 5px;
-				margin: 25px;
-			
-				max-width: 500px;
-				max-height: 300px;
-				height: 60px;
-				
-				position: relative;
-				top: 0;
-				transition: top ease 0.5s;
-			}
-			
-			.logo_games:hover {
-				top: -10px;
-			}
-			
-			.logo_flins {
-				margin-left: 25px;
-				margin-right: 25px;
-				margin-bottom: 25px;
-				margin-top: 25px;
-				
-				max-width: 500px;
-				max-height: 300px;
-				height: 60px;
-				
-				position: relative;
-				top: 0;
-				transition: top ease 0.5s;
-			}
-			
-			.logo_flins:hover {
-				top: -10px;
-			}
-			
-			.example_projects {
-				max-width: 100%;
-				height: fit-content;
-				width: 90%;
-				background-color: rgba(255, 255, 255, 0.2);
-		
-				border: 4px solid rgba(255, 255, 255, 0.6);
-				border-radius: 20px;
-				
-				display: inline-block;
-				overflow: hidden;
-			}
-			
-			.example_images {
-				margin: 10px;
-				margin-right: 10px;
-				
-				max-width: 800px;
-				max-height: 800px;
-				width: 250px;
-				
-				position: relative;
-				top: 0;
-				transition: top ease 0.5s;
-				
-				border: 3px solid rgba(0, 0, 0);
-			}
-			
-			.example_images:hover {
-				top: -10px;
-			}
-			
-			.example_logo {
-				margin: 5px;
-				margin-bottom: 0px;
-				max-width: 500px;
-				max-height: 300px;
-				
-				width: 320px;
-			}
-			
-			.example_text {
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 1.5em;
-				
-				margin: 10px;
-				margin-top: 2px;
-				color: black;
-				text-decoration: none;
-			}
-			
-			.social_media {
-				height: fit-content;
-				width: fit-content;
-				background-color: rgba(255, 255, 255, 0.2);
-		
-				border: 4px solid rgba(255, 255, 255, 0.6);
-				border-radius: 20px;
-				
-				display: inline-block;
-				overflow: hidden;
-			}
-			
-			.sm_icon {
-				margin: 12px;
-			
-				max-width: 256px;
-				width: 48px;
-				
-				transition: width ease 0.5s;
-			}
-			
-			.sm_icon:hover {
-				width: 60px;
-			}
-		</style>
+		<link rel="stylesheet" href=".\scripts\style.css">
 	  
 		<div id="top_nav" class="topnav">
 			<img id="logo_flines" class="logo" src=".\media\logos\logo_classic.png" alt="flines"\>
@@ -193,7 +19,7 @@
 	</head>
 	
 	<body id="body">
-		<center><div hidden class="preloadedImages"></div>
+		<center>
 		<div onmouseleave="nohover()" id="menus_games" class="menus_background">
 			<img id="logo_lab" onclick="clickbutton(this)" class="logo_games" src=".\media\lab\lab_logo.png" alt="Lab Cat Mania"\>
 			<img id="logo_wsps" onclick="clickbutton(this)" class="logo_games" src=".\media\wsps\wspsh_logo.png" alt="Watching Someone Pee Simulator: HYPER!!"\>
@@ -209,7 +35,7 @@
 		<center><div class="example_projects">
 			<img id="example_logo_1" class="example_logo" src="./media/logos/logo_classic.png"/>
 			<br><div style="clear:both;"></div>
-			<a id="example_text_1" class="example_text">Welcome to my website!!</a>
+			<a id="example_text_1" class="example_text">i kinda uh haven't finished this website so come back some other day or something</a>
 			<br><div style="clear:both;"></div><br>
 			<img style="display: none;" id="example_image_1" class="example_images" src=""/>
 			<img style="display: none;" id="example_image_2" class="example_images" src="" onclick="clicksbutton(this)"/>
